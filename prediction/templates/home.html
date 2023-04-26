@@ -1,0 +1,18 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+
+    <main class="bg-main">
+      <section>
+          <h1>Welcome To Diabetes Prediction System</h1>
+            <div class="bar">
+              
+            <a href="{% url 'predict' %}" class = "btnone">Quick Predict</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'predict' %}" class = "btntwo">Predict Now </a>
+            {% endif %}
+          </div>
+      </section>
+  </main>
+{% endblock %}

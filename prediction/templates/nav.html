@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load  static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .navbar{
+            background-color:  green !important;
+        }
+        .btn-group{
+          margin-left: 580px;
+          background-color: green !important;
+          color: white !important;
+          font-weight: bold !important;
+        }
+        .nav-link:hover{
+          background-color: rgb(18, 211, 18);
+          color: blanchedalmond;
+          
+        }
+    </style>
+    <title>Hello!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 m-0 ">
+        <div class="container-fluid">
+          <i class="fa text-white fs-2 fa-heartbeat" aria-hidden="true"> <a class="navbar-brand text-white fs-3" href="#">DPS</a></i>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white fs-5" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-white fs-5" href="{% url 'predict' %}">Quick Predict</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-white fs-5" href="{% url 'contact' %}">Contact Us</a>
+              </li>
+              {% comment %} <li class="nav-item">
+                <a class="nav-link text-white fs-5" href="{% url 'about' %}">About Us</a>
+              </li> {% endcomment %}
+              <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle fs-7 text-white" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i> 
+                  {{user.username}}
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
+                  <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                  
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+              </div>
+              
+          
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+{% block content %}
+
+{% endblock %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
