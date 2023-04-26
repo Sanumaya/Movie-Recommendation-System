@@ -1,0 +1,29 @@
+      {% extends 'nav.html' %}
+      {% load  static %}
+      {% load crispy_forms_tags %}
+    <!-- Required meta tags -->
+  
+        {% block content %}
+        
+      <h3 class="text-center mt-1">Fill the form below to predict your disease</h3>
+      <hr class="text-promary">
+
+      <div class="row justify-content-center mt-2">
+          <div class="col-6">
+              <div class="card">
+                  <div class="card-body">
+                      <form action="{% url 'result' %}" method="POST">
+                          {% csrf_token %}
+                          {{form|crispy}}
+                          <br>
+                          <button class="btn btn-success" type="submit">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+     
+      {% endblock %}
+
+
+
