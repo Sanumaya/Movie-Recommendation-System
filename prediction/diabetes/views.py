@@ -14,16 +14,6 @@ from . models import Ans
 def home(request):
     return render(request, 'home.html')
 
-# def predict(request):
-#     if request.method == "POST":
-#         form = ResultModelForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('home')
-#         raise Exception('Invalid Input')
-#     else:
-#         form = ResultModelForm()
-#         return render(request, 'predict.html', {'form':form})
 
 def predict(request):
     print("predict view")
